@@ -161,7 +161,7 @@ trait ResetsPasswords
             ]);
         }
 
-        return redirect()->back()
+        return redirect(route('password.reset'))
                     ->withInput($request->only('email'))
                     ->withErrors(['email' => trans($response)]);
     }

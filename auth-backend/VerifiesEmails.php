@@ -90,6 +90,6 @@ trait VerifiesEmails
 
         return $request->wantsJson()
                     ? new JsonResponse([], 202)
-                    : back()->with('resent', true);
+                    : redirect(route('verification.notice'))->with('resent', true);
     }
 }
